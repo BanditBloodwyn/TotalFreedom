@@ -388,7 +388,7 @@ MonoBehaviour:
   - {fileID: 497964784}
   Player: {fileID: 1432948129}
   ViewDistance: 50
-  ChunkSize: 10
+  ChunkSize: 50
   Material: {fileID: 2100000, guid: 20b70626f42b82846aa8288b359dbf88, type: 2}
 --- !u!1 &497964783
 GameObject:
@@ -471,7 +471,7 @@ MonoBehaviour:
   MovingSpeed: 5
   ScrollSpeed: 0.5
   MinimumHeight: 10
-  MaximumHeight: 100
+  MaximumHeight: 20
   positionLerpTime: 1
   rotationLerpTime: 0.01
 --- !u!81 &497964787
