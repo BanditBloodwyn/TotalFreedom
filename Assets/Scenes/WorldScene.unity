@@ -389,7 +389,7 @@ MonoBehaviour:
   Player: {fileID: 1432948129}
   ViewDistance: 200
   ChunkSize: 200
-  Material: {fileID: 2100000, guid: 20b70626f42b82846aa8288b359dbf88, type: 2}
+  Material: {fileID: 2100000, guid: 8e861e53cac7a56489dade262bb1d4df, type: 2}
   ShapeSettings: {fileID: 11400000, guid: adcccb0cc7a74db44b887fecb01efbbb, type: 2}
   shapeSettingsFoldout: 1
 --- !u!1 &497964783
@@ -420,7 +420,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 497964783}
   m_LocalRotation: {x: 0.57593304, y: 0, z: 0, w: 0.8174969}
-  m_LocalPosition: {x: 0, y: 10, z: -5}
+  m_LocalPosition: {x: 0, y: 35, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1802880797}
@@ -914,7 +914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432948129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 50, z: 0}
+  m_LocalPosition: {x: 0, y: 26.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1077625378}
@@ -988,7 +988,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e7af58f06733ada4481cef0ab10ddd34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

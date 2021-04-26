@@ -50,10 +50,6 @@ namespace Assets.Scripts.World.WorldGeneration
                 pointOnWorld.x * worldSize - position.x,
                 pointOnWorld.y * elevation,
                 pointOnWorld.z * worldSize - position.z);
-            //return new Vector3(
-            //    pointOnWorld.x * worldSize,
-            //    pointOnWorld.y * elevation,
-            //    pointOnWorld.z * worldSize);
         }
     }
 }

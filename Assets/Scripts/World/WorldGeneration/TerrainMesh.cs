@@ -58,9 +58,16 @@ namespace Assets.Scripts.World.WorldGeneration
                 }
             }
 
+            Vector2[] uvs = new Vector2[vertices.Length];
+            for (int i = 0; i < uvs.Length; i++)
+            {
+                uvs[i] = new Vector2(vertices[i].x, vertices[i].z);
+            }
+
             mesh.Clear();
             mesh.vertices = vertices;
             mesh.triangles = triangles;
+            mesh.uv = uvs;
             mesh.RecalculateNormals();
         }
     }

@@ -53,7 +53,7 @@ namespace Assets.Scripts.World.WorldGeneration
             meshFilter = terrainGameObject.AddComponent<MeshFilter>();
             meshFilter.sharedMesh = new Mesh();
 
-            meshFilter.GetComponent<MeshRenderer>().sharedMaterial = material;
+            meshFilter.GetComponent<MeshRenderer>().material = material;
         }
 
         private void ConstructMesh()
