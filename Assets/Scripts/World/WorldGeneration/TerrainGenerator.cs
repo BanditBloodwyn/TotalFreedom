@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Assets.Scripts.World.WorldGeneration.Settings;
 using UnityEngine;
 
 namespace Assets.Scripts.World.WorldGeneration
@@ -16,16 +17,23 @@ namespace Assets.Scripts.World.WorldGeneration
         public int ChunkSize = 10;
 
         public Material Material;
+        public WorldShapeSettings ShapeSettings;
+        
+        // Editor
+        [HideInInspector]
+        public bool shapeSettingsFoldout;
 
         private int chunksVisibleInViewDistance;
         private readonly Dictionary<Vector2, TerrainChunk> allTerrainChunks = new Dictionary<Vector2, TerrainChunk>();
         private readonly List<TerrainChunk> terrainChunksVisibleLastUpdate = new List<TerrainChunk>();
         private readonly List<Vector2> worldInstancesChunkCoordinates = new List<Vector2>();
+        private readonly ShapeGenerator shapeGenerator = new ShapeGenerator();
 
         // Start is called before the first frame update
         private void Start()
         {
             chunksVisibleInViewDistance = Mathf.RoundToInt(ViewDistance / ChunkSize);
+            shapeGenerator.UpdateSettings(ShapeSettings);
         }
 
         // Update is called once per frame
@@ -69,7 +77,7 @@ namespace Assets.Scripts.World.WorldGeneration
                     }
                     else
                     {
-                        allTerrainChunks.Add(viewedChunkCoord, new TerrainChunk(viewedChunkCoord, ChunkSize, transform, Material, Player));
+                        allTerrainChunks.Add(viewedChunkCoord, new TerrainChunk(shapeGenerator, viewedChunkCoord, ChunkSize, transform, Material, Player));
                     }
                 }
             }

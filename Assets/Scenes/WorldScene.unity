@@ -387,9 +387,11 @@ MonoBehaviour:
   - {fileID: 1432948130}
   - {fileID: 497964784}
   Player: {fileID: 1432948129}
-  ViewDistance: 50
-  ChunkSize: 50
+  ViewDistance: 200
+  ChunkSize: 200
   Material: {fileID: 2100000, guid: 20b70626f42b82846aa8288b359dbf88, type: 2}
+  ShapeSettings: {fileID: 11400000, guid: adcccb0cc7a74db44b887fecb01efbbb, type: 2}
+  shapeSettingsFoldout: 1
 --- !u!1 &497964783
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,9 +471,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovingSpeed: 5
-  ScrollSpeed: 0.5
+  ScrollSpeed: 1
   MinimumHeight: 10
-  MaximumHeight: 20
+  MaximumHeight: 100
   positionLerpTime: 1
   rotationLerpTime: 0.01
 --- !u!81 &497964787
@@ -912,7 +914,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1432948129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 50, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1077625378}
@@ -949,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0033460455252854da8ef4d9be7beed6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 13.76
+  Speed: 7
   Gravity: 3.61
   SmoothTime: 0
   TurnSpeed: 7
