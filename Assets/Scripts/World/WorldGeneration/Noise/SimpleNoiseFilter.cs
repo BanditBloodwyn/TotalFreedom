@@ -23,7 +23,7 @@ namespace Assets.Scripts.World.WorldGeneration.Noise
 
             for (int i = 0; i < simpleNoiseSettings.NumberOfLayers; i++)
             {
-                float v = noise.Evaluate(point * frequency + simpleNoiseSettings.center);
+                float v = noise.Evaluate((point + simpleNoiseSettings.center - position) * frequency);
                 noiseValue += (v + 1) * 0.5f * amplitude;
                 frequency *= simpleNoiseSettings.Roughness;
                 amplitude *= simpleNoiseSettings.Persistence;

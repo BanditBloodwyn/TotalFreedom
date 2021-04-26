@@ -28,7 +28,7 @@ namespace Assets.Scripts.World.WorldGeneration
 
             if (noiseFilters.Length > 0)
             {
-                firstLayerValue = noiseFilters[0].Evaluate(pointOnWorld, position);
+                firstLayerValue = noiseFilters[0].Evaluate(pointOnWorld, -position / worldSize);
                 
                 if (shapeSettings.NoiseLayers[0].Enabled)
                     elevation = firstLayerValue;
@@ -42,14 +42,14 @@ namespace Assets.Scripts.World.WorldGeneration
                         ? firstLayerValue
                         : 1;
                    
-                    elevation += noiseFilters[i].Evaluate(pointOnWorld, position) * mask;
+                    elevation += noiseFilters[i].Evaluate(pointOnWorld, -position / worldSize) * mask;
                 }
             }
 
             return new Vector3(
-                pointOnWorld.x * worldSize - position.x,
+                pointOnWorld.x * worldSize/2 - position.x/2,
                 pointOnWorld.y * elevation,
-                pointOnWorld.z * worldSize - position.z);
+                pointOnWorld.z * worldSize/2 - position.z/2);
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Assets.Scripts.World.WorldGeneration
                     int index = x + y * resolution;
 
                     Vector2 percent = new Vector2(x, y) / (resolution - 1);
-                    Vector3 pointOnWorld = position * 2f / size + localUp + (percent.x - 0.5f) * 2 * axisA + (percent.y - 0.5f) * 2 * axisB;
+                    Vector3 pointOnWorld = position / size + localUp + (percent.x - 0.5f) * 2 * axisA + (percent.y - 0.5f) * 2 * axisB;
                     vertices[index] = shapeGenerator.CalculatePointOnWorld(pointOnWorld, size, position);
 
                     if (x != resolution - 1 && y != resolution - 1)

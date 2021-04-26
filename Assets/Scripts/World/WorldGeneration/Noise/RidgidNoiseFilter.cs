@@ -23,7 +23,7 @@ namespace Assets.Scripts.World.WorldGeneration.Noise
 
             for (int i = 0; i < noiseSettings.NumberOfLayers; i++)
             {
-                float v = 1 - Mathf.Abs(noise.Evaluate(point * frequency + noiseSettings.center));
+                float v = 1 - Mathf.Abs(noise.Evaluate((point + noiseSettings.center - position) * frequency));
                 v *= v;
                 v *= weight;
                 weight = Mathf.Clamp01(v * noiseSettings.WeightMultiplier);
