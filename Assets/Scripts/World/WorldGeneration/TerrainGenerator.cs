@@ -16,9 +16,13 @@ namespace Assets.Scripts.World.WorldGeneration
         [Range(10, 256)]
         public int ChunkSize = 10;
 
-        public Material Material;
+        public Material TerrainMaterial;
+        public Material WaterMaterial;
         public WorldShapeSettings ShapeSettings;
-        
+
+        [Range(1, 256)]
+        public float WaterLevel = 1;
+
         // Editor
         [HideInInspector]
         public bool shapeSettingsFoldout;
@@ -77,7 +81,15 @@ namespace Assets.Scripts.World.WorldGeneration
                     }
                     else
                     {
-                        allTerrainChunks.Add(viewedChunkCoord, new TerrainChunk(shapeGenerator, viewedChunkCoord, ChunkSize, transform, Material, Player));
+                        allTerrainChunks.Add(viewedChunkCoord, new TerrainChunk(
+                            shapeGenerator, 
+                            viewedChunkCoord, 
+                            ChunkSize, 
+                            WaterLevel,
+                            transform, 
+                            TerrainMaterial,
+                            WaterMaterial,
+                            Player));
                     }
                 }
             }

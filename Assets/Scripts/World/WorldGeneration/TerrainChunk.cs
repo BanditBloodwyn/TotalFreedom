@@ -13,19 +13,23 @@ namespace Assets.Scripts.World.WorldGeneration
         private readonly ShapeGenerator shapeGenerator;
         private MeshFilter meshFilter;
         private GameObject terrainGameObject;
-        private readonly Material material;
+        private readonly Material terrainMaterial;
+        private readonly Material waterMaterial;
 
         private readonly Vector2 chunkPosition2D; // chunk coordinates, not worldspace coordinates
         private Bounds bounds;
         private readonly int size;
+        private readonly float waterLevel;
 
         private readonly List<Vector2> gameObjectsThatSeeThisChunk = new List<Vector2>();
 
-        public TerrainChunk(ShapeGenerator shapeGenerator, Vector2 coord, int size, Transform parent, Material material, GameObject Player)
+        public TerrainChunk(ShapeGenerator shapeGenerator, Vector2 coord, int size, float waterLevel, Transform parent, Material terrainMaterial, Material waterMaterial, GameObject Player)
         {
             this.shapeGenerator = shapeGenerator;
             this.size = size;
-            this.material = material;
+            this.waterLevel = waterLevel;
+            this.terrainMaterial = terrainMaterial;
+            this.waterMaterial = waterMaterial;
 
             chunkPosition2D = coord * size;
             bounds = new Bounds(chunkPosition2D, Vector2.one * size);
@@ -33,6 +37,7 @@ namespace Assets.Scripts.World.WorldGeneration
             CreateGameObject(parent, Player);
             CreateMeshFilter();
             ConstructMesh();
+            CreateWater();
             SetVisible(false, null);
         }
 
@@ -53,7 +58,7 @@ namespace Assets.Scripts.World.WorldGeneration
             meshFilter = terrainGameObject.AddComponent<MeshFilter>();
             meshFilter.sharedMesh = new Mesh();
 
-            meshFilter.GetComponent<MeshRenderer>().material = material;
+            meshFilter.GetComponent<MeshRenderer>().material = terrainMaterial;
         }
 
         private void ConstructMesh()
@@ -62,6 +67,19 @@ namespace Assets.Scripts.World.WorldGeneration
             terrainMesh.ConstructMesh();
             
             terrainGameObject.AddComponent<MeshCollider>().sharedMesh = meshFilter.sharedMesh;
+        }
+
+        private void CreateWater()
+        {
+            if (!terrainMesh.NeedsWater(waterLevel))
+                return;
+
+            GameObject waterGameObject = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            waterGameObject.name = "WaterPlane";
+            waterGameObject.transform.parent = terrainGameObject.transform;
+            waterGameObject.transform.position = new Vector3(chunkPosition2D.x, waterLevel, chunkPosition2D.y);
+            waterGameObject.transform.localScale = new Vector3(size/10f, 0, size/10f);
+            waterGameObject.GetComponent<MeshRenderer>().material = waterMaterial;
         }
 
         public void UpdateChunk(Vector2 worldInstancesChunkCoordinate, float viewDistance, Vector2 gameObject)

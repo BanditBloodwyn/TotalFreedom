@@ -303,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 308698819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1.2, z: 1}
   m_Children:
   - {fileID: 483136555}
   m_Father: {fileID: 1482036300}
@@ -389,8 +389,10 @@ MonoBehaviour:
   Player: {fileID: 1432948129}
   ViewDistance: 200
   ChunkSize: 200
-  Material: {fileID: 2100000, guid: 8e861e53cac7a56489dade262bb1d4df, type: 2}
+  TerrainMaterial: {fileID: 2100000, guid: 8e861e53cac7a56489dade262bb1d4df, type: 2}
+  WaterMaterial: {fileID: 2100000, guid: 8a3bb4302f506854da70d636fa5f3e93, type: 2}
   ShapeSettings: {fileID: 11400000, guid: adcccb0cc7a74db44b887fecb01efbbb, type: 2}
+  WaterLevel: 1
   shapeSettingsFoldout: 1
 --- !u!1 &497964783
 GameObject:

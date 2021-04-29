@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.World.WorldGeneration
@@ -69,6 +70,11 @@ namespace Assets.Scripts.World.WorldGeneration
             mesh.triangles = triangles;
             mesh.uv = uvs;
             mesh.RecalculateNormals();
+        }
+
+        public bool NeedsWater(float waterLevel)
+        {
+            return mesh.vertices.Any(vertex => vertex.y < waterLevel);
         }
     }
 }
