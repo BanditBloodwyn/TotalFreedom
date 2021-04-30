@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Camera;
 using Assets.Scripts.Gameplay.Characters.Player;
+using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.World.WorldGeneration
@@ -49,8 +50,6 @@ namespace Assets.Scripts.World.WorldGeneration
             terrainGameObject.AddComponent<MeshRenderer>();
             terrainGameObject.layer = 3;
             terrainGameObject.tag = "Walkable";
-            terrainGameObject.AddComponent<ClickToSetPlayerTarget>();
-            terrainGameObject.GetComponent<ClickToSetPlayerTarget>().walkingScript = player.GetComponent<WalkToClickedPosition>();
         }
 
         private void CreateMeshFilter()
@@ -80,6 +79,9 @@ namespace Assets.Scripts.World.WorldGeneration
             waterGameObject.transform.position = new Vector3(chunkPosition2D.x, waterLevel, chunkPosition2D.y);
             waterGameObject.transform.localScale = new Vector3(size/10f, 0, size/10f);
             waterGameObject.GetComponent<MeshRenderer>().material = waterMaterial;
+            Object.Destroy(waterGameObject.GetComponent<MeshCollider>());
+            waterGameObject.AddComponent<BoxCollider>();
+            waterGameObject.GetComponent<BoxCollider>().isTrigger = true;
         }
 
         public void UpdateChunk(Vector2 worldInstancesChunkCoordinate, float viewDistance, Vector2 gameObject)

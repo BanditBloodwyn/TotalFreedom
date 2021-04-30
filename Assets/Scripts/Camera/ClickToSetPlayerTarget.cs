@@ -7,7 +7,13 @@ namespace Assets.Scripts.Camera
     {
         public WalkToClickedPosition walkingScript;
 
-        private void OnMouseDown()
+        private void Update()
+        {
+            if (Input.GetMouseButtonDown(1))
+                SetWalkingTarget();
+        }
+
+        private void SetWalkingTarget()
         {
             if (UnityEngine.Camera.main == null)
                 return;
