@@ -386,7 +386,6 @@ MonoBehaviour:
   WorldInstances:
   - {fileID: 1432948130}
   - {fileID: 497964784}
-  Player: {fileID: 1432948129}
   ViewDistance: 200
   ChunkSize: 200
   TerrainMaterial: {fileID: 2100000, guid: 8e861e53cac7a56489dade262bb1d4df, type: 2}

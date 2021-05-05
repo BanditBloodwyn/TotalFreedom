@@ -24,7 +24,7 @@ namespace Assets.Scripts.World.WorldGeneration
 
         private readonly List<Vector2> gameObjectsThatSeeThisChunk = new List<Vector2>();
 
-        public TerrainChunk(ShapeGenerator shapeGenerator, Vector2 coord, int size, float waterLevel, Transform parent, Material terrainMaterial, Material waterMaterial, GameObject Player)
+        public TerrainChunk(ShapeGenerator shapeGenerator, Vector2 coord, int size, float waterLevel, Transform parent, Material terrainMaterial, Material waterMaterial)
         {
             this.shapeGenerator = shapeGenerator;
             this.size = size;
@@ -35,14 +35,14 @@ namespace Assets.Scripts.World.WorldGeneration
             chunkPosition2D = coord * size;
             bounds = new Bounds(chunkPosition2D, Vector2.one * size);
 
-            CreateGameObject(parent, Player);
+            CreateGameObject(parent);
             CreateMeshFilter();
             ConstructMesh();
             CreateWater();
             SetVisible(false, null);
         }
 
-        private void CreateGameObject(Transform parent, GameObject player)
+        private void CreateGameObject(Transform parent)
         {
             terrainGameObject = new GameObject("TerrainObject");
             terrainGameObject.transform.parent = parent;
@@ -77,7 +77,7 @@ namespace Assets.Scripts.World.WorldGeneration
             waterGameObject.name = "WaterPlane";
             waterGameObject.transform.parent = terrainGameObject.transform;
             waterGameObject.transform.position = new Vector3(chunkPosition2D.x, waterLevel, chunkPosition2D.y);
-            waterGameObject.transform.localScale = new Vector3(size/10f, 0, size/10f);
+            waterGameObject.transform.localScale = new Vector3(size/10f, 0.1f, size/10f);
             waterGameObject.GetComponent<MeshRenderer>().material = waterMaterial;
             Object.Destroy(waterGameObject.GetComponent<MeshCollider>());
             waterGameObject.AddComponent<BoxCollider>();

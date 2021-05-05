@@ -8,7 +8,6 @@ namespace Assets.Scripts.World.WorldGeneration
     {
         [Tooltip("All objects which need an active terrain around them.")]
         public Transform[] WorldInstances;
-        public GameObject Player;
 
         [Range(10, 256)]
         public float ViewDistance = 10;
@@ -88,8 +87,7 @@ namespace Assets.Scripts.World.WorldGeneration
                             WaterLevel,
                             transform, 
                             TerrainMaterial,
-                            WaterMaterial,
-                            Player));
+                            WaterMaterial));
                     }
                 }
             }
