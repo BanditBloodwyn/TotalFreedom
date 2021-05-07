@@ -1,4 +1,4 @@
-﻿namespace Assets.Scripts.Framework.GameManagement
+﻿namespace Assets.Scripts.Framework.GameManagement.Game
 {
     public enum GameState
     {

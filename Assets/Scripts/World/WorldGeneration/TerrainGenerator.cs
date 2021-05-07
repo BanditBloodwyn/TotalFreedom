@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Assets.Scripts.Framework.GameManagement;
+using Assets.Scripts.Framework.GameManagement.Game;
 using Assets.Scripts.World.WorldGeneration.Settings;
 using UnityEngine;
 

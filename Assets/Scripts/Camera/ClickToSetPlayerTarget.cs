@@ -1,4 +1,4 @@
-using Assets.Scripts.Framework.GameManagement;
+using Assets.Scripts.Framework.GameManagement.Game;
 using Assets.Scripts.Gameplay.Characters.Player;
 using UnityEngine;
 

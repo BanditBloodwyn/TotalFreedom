@@ -1,3 +1,4 @@
+using Assets.Scripts.Framework.GameManagement.UI;
 using UnityEngine;
 
 namespace Assets.Scripts.Camera
@@ -33,12 +34,6 @@ namespace Assets.Scripts.Camera
         // Update is called once per frame
         private void Update()
         {
-            if (IsEscapePressed())
-            {
-                Application.Quit();
-                //UnityEditor.EditorApplication.isPlaying = false;
-            }
-
             // Translation
             Vector3 translation = GetInputTranslationDirection() * Time.deltaTime;
             
@@ -66,12 +61,14 @@ namespace Assets.Scripts.Camera
 
         private float GetCameraHeight()
         {
-            currentHeight -= Input.mouseScrollDelta.y * ScrollSpeed;
-            if (currentHeight < MinimumHeight)
-                currentHeight = MinimumHeight;
-            if (currentHeight > MaximumHeight)
-                currentHeight = MaximumHeight;
-
+            if (! UIManager.instance.IsMenuOpen)
+            {
+                currentHeight -= Input.mouseScrollDelta.y * ScrollSpeed;
+                if (currentHeight < MinimumHeight)
+                    currentHeight = MinimumHeight;
+                if (currentHeight > MaximumHeight)
+                    currentHeight = MaximumHeight;
+            }
             return currentHeight + GetTerrainHeight();
         }
 
@@ -93,6 +90,9 @@ namespace Assets.Scripts.Camera
         {
             Vector3 direction = Vector3.zero;
 
+            if (UIManager.instance.IsMenuOpen)
+                return Vector3.zero;
+
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {
                 direction += Vector3.forward;
@@ -111,11 +111,6 @@ namespace Assets.Scripts.Camera
             }
 
             return direction;
-        }
-
-        private bool IsEscapePressed()
-        {
-            return Input.GetKey(KeyCode.Escape);
         }
 
         private bool IsBoostPressed()

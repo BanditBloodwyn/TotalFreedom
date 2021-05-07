@@ -1,12 +1,12 @@
 using UnityEngine;
 
-namespace Assets.Scripts.Framework.GameManagement
+namespace Assets.Scripts.Framework.GameManagement.Game
 {
     public class GameManager : MonoBehaviour
     {
         public static GameManager instance;
+
         public GameState gameState { get; private set; }
-        public OpenMenus openMenus { get; private set; }
 
         private void Awake()
         {
@@ -27,7 +27,9 @@ namespace Assets.Scripts.Framework.GameManagement
         // Update is called once per frame
         private void Update()
         {
-        
+            if (Input.GetKey(KeyCode.Escape))
+                Application.Quit();
+
         }
 
         public void PlayerDied()

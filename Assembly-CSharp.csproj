@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Camera\CameraState.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Camera\ClickToSetPlayerTarget.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\UI\OpenMenus.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainGenerator.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\SimplexPerlinNoise.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldNoiseSettings.cs" />
@@ -76,9 +77,9 @@
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\ConditionalHideAttribute.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldShapeSettings.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainMesh.cs" />
-    <Compile Include="Assets\Scripts\Framework\GameManagement\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Framework\GameManagement\GameState.cs" />
-    <Compile Include="Assets\Scripts\Framework\GameManagement\OpenMenus.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\UI\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameState.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

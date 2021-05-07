@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using Assets.Scripts.Camera;
-using Assets.Scripts.Gameplay.Characters.Player;
-using UnityEditor;
 using UnityEngine;
 
 namespace Assets.Scripts.World.WorldGeneration
