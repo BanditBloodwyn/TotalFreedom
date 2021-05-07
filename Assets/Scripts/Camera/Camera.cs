@@ -90,8 +90,8 @@ namespace Assets.Scripts.Camera
         {
             Vector3 direction = Vector3.zero;
 
-            if (UIManager.instance.IsMenuOpen)
-                return Vector3.zero;
+            //if (UIManager.instance.IsMenuOpen)
+            //    return Vector3.zero;
 
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             {

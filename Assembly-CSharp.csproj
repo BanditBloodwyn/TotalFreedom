@@ -56,13 +56,13 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameState.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\ShapeGenerator.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Characters\NPC.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\NoiseFilterFactory.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraState.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\Camera\ClickToSetPlayerTarget.cs" />
-    <Compile Include="Assets\Scripts\Framework\GameManagement\UI\OpenMenus.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainGenerator.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\SimplexPerlinNoise.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldNoiseSettings.cs" />
@@ -73,13 +73,13 @@
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\RidgidNoiseFilter.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Characters\Player\WalkToClickedPosition.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\ConditionalHideAttribute.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldShapeSettings.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainMesh.cs" />
-    <Compile Include="Assets\Scripts\Framework\GameManagement\UI\UIManager.cs" />
-    <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameState.cs" />
-    <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameManager.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\GameMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

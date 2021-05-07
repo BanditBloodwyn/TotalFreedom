@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.UI.Menus;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -36,8 +37,8 @@ namespace Assets.Scripts.Framework.GameManagement.UI
         // Start is called before the first frame update
         private void Start()
         {
-            CharacterMenu.SetActive(false);
-            Inventory.SetActive(false);
+            foreach (GameObject m in menus)
+                m.SetActive(false);
         }
 
         // Update is called once per frame
@@ -51,13 +52,14 @@ namespace Assets.Scripts.Framework.GameManagement.UI
 
         private void HandleMenu(GameObject menu)
         {
-            if(menu.activeSelf)
-                menu.SetActive(false);
+            if (menu.activeSelf)
+                menu.GetComponent<GameMenu>().FadeOut();
             else
             {
                 foreach (GameObject m in menus.Where(m => m != menu))
-                    m.SetActive(false);
-                menu.SetActive(true);
+                    m.GetComponent<GameMenu>().FadeOut();
+                menu.GetComponent<GameMenu>().FadeIn();
+
             }
         }
     }
