@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -43,12 +44,20 @@ namespace Assets.Scripts.Framework.GameManagement.UI
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.C))
-            {
-                CharacterMenu.SetActive(!CharacterMenu.activeSelf);
-            }            
+                HandleMenu(CharacterMenu);
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.I))
+                HandleMenu(Inventory);
+        }
+
+        private void HandleMenu(GameObject menu)
+        {
+            if(menu.activeSelf)
+                menu.SetActive(false);
+            else
             {
-                Inventory.SetActive(!Inventory.activeSelf);
+                foreach (GameObject m in menus.Where(m => m != menu))
+                    m.SetActive(false);
+                menu.SetActive(true);
             }
         }
     }
