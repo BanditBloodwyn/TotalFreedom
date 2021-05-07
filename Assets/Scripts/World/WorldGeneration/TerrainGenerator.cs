@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Assets.Scripts.Framework.GameManagement;
 using Assets.Scripts.World.WorldGeneration.Settings;
 using UnityEngine;
 
@@ -62,6 +63,9 @@ namespace Assets.Scripts.World.WorldGeneration
             {
                 UpdateChunksForInstance(worldInstancesChunkCoordinate);
             }
+
+            if(GameManager.instance.gameState == GameState.LoadingScreen)
+                GameManager.instance.GameStarted();
         }
 
         private void UpdateChunksForInstance(Vector2 worldInstancesChunkCoordinate)

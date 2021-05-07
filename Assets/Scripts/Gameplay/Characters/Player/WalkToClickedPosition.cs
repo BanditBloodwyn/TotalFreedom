@@ -7,7 +7,6 @@ namespace Assets.Scripts.Gameplay.Characters.Player
     {
         [Header("Movement")]
         public float Speed;
-        public float Gravity;
         public float SmoothTime;
         public float TurnSpeed;
 

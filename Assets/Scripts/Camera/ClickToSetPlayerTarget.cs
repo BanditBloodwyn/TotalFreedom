@@ -1,3 +1,4 @@
+using Assets.Scripts.Framework.GameManagement;
 using Assets.Scripts.Gameplay.Characters.Player;
 using UnityEngine;
 
@@ -9,8 +10,12 @@ namespace Assets.Scripts.Camera
 
         private void Update()
         {
-            if (Input.GetMouseButtonDown(1))
-                SetWalkingTarget();
+            if(GameManager.instance.gameState == GameState.Playing)
+            {
+                if (Input.GetMouseButtonDown(1))
+                    SetWalkingTarget();
+            }
+
         }
 
         private void SetWalkingTarget()

@@ -76,6 +76,9 @@
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\ConditionalHideAttribute.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldShapeSettings.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainMesh.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\GameState.cs" />
+    <Compile Include="Assets\Scripts\Framework\GameManagement\OpenMenus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
