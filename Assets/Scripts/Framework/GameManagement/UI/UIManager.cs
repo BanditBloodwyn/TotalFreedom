@@ -32,13 +32,19 @@ namespace Assets.Scripts.Framework.GameManagement.UI
             Assert.IsNotNull(Inventory);
 
             menus.AddRange(new []{CharacterMenu, Inventory});
+
+            foreach (GameObject m in menus)
+            {
+                m.SetActive(true);
+                m.GetComponent<GameMenu>().FadeOut(m);
+            }
+
         }
 
         // Start is called before the first frame update
         private void Start()
         {
-            foreach (GameObject m in menus)
-                m.SetActive(false);
+
         }
 
         // Update is called once per frame
@@ -52,14 +58,19 @@ namespace Assets.Scripts.Framework.GameManagement.UI
 
         private void HandleMenu(GameObject menu)
         {
-            if (menu.activeSelf)
-                menu.GetComponent<GameMenu>().FadeOut();
+            GameMenu gameMenu = menu.GetComponent<GameMenu>();
+
+            if (gameMenu.visible)
+                gameMenu.FadeOut(menu);
             else
             {
                 foreach (GameObject m in menus.Where(m => m != menu))
-                    m.GetComponent<GameMenu>().FadeOut();
-                menu.GetComponent<GameMenu>().FadeIn();
-
+                {
+                    GameMenu gm = m.GetComponent<GameMenu>();
+                    if (gm.visible == true)
+                        gm.FadeOut(m);
+                }                
+                gameMenu.FadeIn(menu);
             }
         }
     }

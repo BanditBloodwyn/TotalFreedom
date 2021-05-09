@@ -1,18 +1,16 @@
-using System.Collections;
 using UnityEngine;
 
 namespace Assets.Scripts.UI.Menus
 {
     public class GameMenu : MonoBehaviour
     {
-        [SerializeField] private float FadeSpeed = 10;
-
-        private CanvasGroup canvasGroup;
+        [SerializeField] private MenuFader menuFader;
+        [HideInInspector] public bool visible => menuFader.visible;
 
         // Start is called before the first frame update
         private void Start()
         {
-            canvasGroup = GetComponent<CanvasGroup>();
+            menuFader ??= new MenuFader();
         }
 
         // Update is called once per frame
@@ -21,48 +19,17 @@ namespace Assets.Scripts.UI.Menus
         
         }
 
-        public void FadeIn()
+        public void FadeIn(GameObject menu)
         {
-            gameObject.SetActive(true);
-            StartCoroutine("FadeInCoroutine");
+            menu.SetActive(true);
+            StartCoroutine(menuFader.FadeInCoroutine(menu));
         }
 
-        public void FadeOut()
+        public void FadeOut(GameObject menu)
         {
-            if (!gameObject.activeSelf)
+            if (!menu.activeSelf) 
                 return;
-
-            StartCoroutine("FadeOutCoroutine");
-        }
-
-        private IEnumerator FadeInCoroutine()
-        {
-            transform.localScale = new Vector3(0, 1, 1);
-            canvasGroup.alpha = 0;
-
-            while (transform.localScale.x < 1.0f)
-            {
-                transform.localScale += new Vector3(FadeSpeed * Time.deltaTime, 0, 0);
-                canvasGroup.alpha = transform.localScale.x;
-                yield return null;
-            }
-        }
-
-        private IEnumerator FadeOutCoroutine()
-        {
-
-            transform.localScale = Vector3.one;
-            canvasGroup.alpha = 1;
-
-            while (transform.localScale.x > 0)
-            {
-                transform.localScale -= new Vector3(FadeSpeed * Time.deltaTime, 0, 0);
-                canvasGroup.alpha = transform.localScale.x;
-                yield return null;
-            }
-
-            gameObject.SetActive(false);
-            yield return null;
+            StartCoroutine(menuFader.FadeOutCoroutine(menu));
         }
     }
 }

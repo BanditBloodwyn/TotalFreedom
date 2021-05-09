@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\INoiseFilter.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainChunk.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\GameMenu.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\RidgidNoiseFilter.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera.cs" />
     <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameManager.cs" />
@@ -79,7 +80,9 @@
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\ConditionalHideAttribute.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldShapeSettings.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainMesh.cs" />
-    <Compile Include="Assets\Scripts\UI\Menus\GameMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\MenuFader.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\MenuFadeDirectionStruct.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\FadeDirection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
