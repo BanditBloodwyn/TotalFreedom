@@ -76,6 +76,7 @@ namespace Assets.Scripts.UI.Menus
                 FadeDirection.left => new Vector3(-1, 0, 0),
                 FadeDirection.up => new Vector3(0, 1, 0),
                 FadeDirection.down => new Vector3(0, -1, 0),
+                FadeDirection.none => Vector3.zero,
                 _ => Vector3.zero
             };
         }

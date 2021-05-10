@@ -12,12 +12,14 @@ namespace Assets.Scripts.Framework.GameManagement.UI
 
         [SerializeField] private GameObject CharacterMenu;
         [SerializeField] private GameObject Inventory;
+        [SerializeField] private GameObject Options;
 
         private readonly List<GameObject> menus = new List<GameObject>();
 
         public bool IsMenuOpen =>
             CharacterMenu.activeSelf ||
-            Inventory.activeSelf;
+            Inventory.activeSelf ||
+            Options.activeSelf;
 
         private void Awake()
         {
@@ -30,8 +32,9 @@ namespace Assets.Scripts.Framework.GameManagement.UI
 
             Assert.IsNotNull(CharacterMenu);
             Assert.IsNotNull(Inventory);
+            Assert.IsNotNull(Options);
 
-            menus.AddRange(new []{CharacterMenu, Inventory});
+            menus.AddRange(new []{CharacterMenu, Inventory, Options});
 
             foreach (GameObject m in menus)
             {
@@ -54,6 +57,8 @@ namespace Assets.Scripts.Framework.GameManagement.UI
                 HandleMenu(CharacterMenu);
             if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.I))
                 HandleMenu(Inventory);
+            if (Input.GetKeyDown(KeyCode.Escape))
+                HandleMenu(Options);
         }
 
         private void HandleMenu(GameObject menu)

@@ -8,6 +8,7 @@ namespace Assets.Scripts.UI.Menus
         right,
         left,
         up,
-        down
+        down,
+        none
     }
 }

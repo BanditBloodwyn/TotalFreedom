@@ -27,9 +27,8 @@ namespace Assets.Scripts.Framework.GameManagement.Game
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetKey(KeyCode.Escape))
-                Application.Quit();
-
+            //if (Input.GetKey(KeyCode.Escape))
+            //    Application.Quit();
         }
 
         public void PlayerDied()

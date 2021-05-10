@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\UI\Menus\MenuFader.cs" />
     <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameState.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\ShapeGenerator.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Characters\NPC.cs" />
@@ -77,12 +78,12 @@
     <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameManager.cs" />
     <Compile Include="Assets\Scripts\Framework\GameManagement\UI\UIManager.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Characters\Player\WalkToClickedPosition.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\FadeDirection.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\MenuFadeDirectionStruct.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\ConditionalHideAttribute.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldShapeSettings.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainMesh.cs" />
-    <Compile Include="Assets\Scripts\UI\Menus\MenuFader.cs" />
-    <Compile Include="Assets\Scripts\UI\Menus\MenuFadeDirectionStruct.cs" />
-    <Compile Include="Assets\Scripts\UI\Menus\FadeDirection.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\Ingame\Options.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
