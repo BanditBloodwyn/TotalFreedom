@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainGenerator.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\SimplexPerlinNoise.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldNoiseSettings.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\Ingame\Options.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\SimpleNoiseFilter.cs" />
     <Compile Include="Assets\Scripts\Debug\DebugUI.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\INoiseFilter.cs" />
@@ -83,7 +84,18 @@
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\ConditionalHideAttribute.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldShapeSettings.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainMesh.cs" />
-    <Compile Include="Assets\Scripts\UI\Menus\Ingame\Options.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Human.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\BodyAttributes.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\CombatSkillAttributes.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\MiscSkillAttributes.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\SpecialPerks.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\JobSkillAttributes.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\AttributeContainer.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\CriminalSkillAttributes.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\CraftingSkillAttributes.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\MovementPerks.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\MindAttributes.cs" />
+    <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\CharacterAttributes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
