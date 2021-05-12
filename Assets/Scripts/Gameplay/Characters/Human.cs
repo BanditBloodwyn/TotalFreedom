@@ -8,7 +8,7 @@ public class Human : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        
+        Attributes = new AttributeContainer();
     }
 
     // Update is called once per frame

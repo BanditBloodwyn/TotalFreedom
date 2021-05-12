@@ -5,6 +5,6 @@
         public int Intelligence { get; set; }
         public int Memory { get; set; }
         public int Creativity { get; set; }
-        public int Reading { get; set; }
+        public int Knowledge { get; set; }
     }
 }
