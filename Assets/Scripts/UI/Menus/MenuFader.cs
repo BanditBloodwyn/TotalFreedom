@@ -29,7 +29,7 @@ namespace Assets.Scripts.UI.Menus
                 allMenus.Add(menu.transform.GetChild(i).gameObject);
 
             fadeInCounter = 0;
-            while (fadeInCounter < 100)
+            while (fadeInCounter < 101)
             {
                 foreach (GameObject gameObject in allMenus)
                 {
@@ -37,8 +37,13 @@ namespace Assets.Scripts.UI.Menus
                     gameObject.GetComponent<CanvasGroup>().alpha = fadeInCounter / 100f;
                 }
                 fadeInCounter += FadingSpeed;
+                
+                if (fadeOutCounter >= 100)
+                    foreach (GameObject gameObject in allMenus)
+                        gameObject.GetComponent<CanvasGroup>().alpha = 1;
                 yield return null;
             }
+
         }
 
         public IEnumerator FadeOutCoroutine(GameObject menu)
@@ -49,7 +54,7 @@ namespace Assets.Scripts.UI.Menus
                 allMenus.Add(menu.transform.GetChild(i).gameObject);
 
             fadeOutCounter = 100;
-            while (fadeOutCounter > 0)
+            while (fadeOutCounter > -1)
             {
                 foreach (GameObject gameObject in allMenus)
                 {
@@ -61,7 +66,6 @@ namespace Assets.Scripts.UI.Menus
                 if(fadeOutCounter <= 0)
                     foreach (GameObject gameObject in allMenus)
                         gameObject.GetComponent<CanvasGroup>().alpha = 0;
-
                 yield return null;
             }
 
