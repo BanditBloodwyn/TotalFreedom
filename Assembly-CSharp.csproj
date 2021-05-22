@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\AttributeContainer.cs" />
     <Compile Include="Assets\Scripts\Gameplay\Characters\Attributes\BodyAttributes.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Noise\RidgidNoiseFilter.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\Ingame\MenuButton.cs" />
     <Compile Include="Assets\Scripts\Camera\Camera.cs" />
     <Compile Include="Assets\Scripts\Framework\GameManagement\Game\GameManager.cs" />
     <Compile Include="Assets\Scripts\Framework\GameManagement\UI\UIManager.cs" />
@@ -91,7 +92,8 @@
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\ConditionalHideAttribute.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\Settings\WorldShapeSettings.cs" />
     <Compile Include="Assets\Scripts\World\WorldGeneration\TerrainMesh.cs" />
-    <Compile Include="Assets\Scripts\UI\Menus\Ingame\MenuButton.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\Ingame\Property.cs" />
+    <Compile Include="Assets\Scripts\UI\Menus\Ingame\Logs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

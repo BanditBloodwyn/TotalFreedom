@@ -13,6 +13,8 @@ namespace Assets.Scripts.Framework.GameManagement.UI
         [SerializeField] private GameObject CharacterMenu;
         [SerializeField] private GameObject Inventory;
         [SerializeField] private GameObject Options;
+        [SerializeField] private GameObject Property;
+        [SerializeField] private GameObject Logs;
 
         private readonly List<GameObject> menus = new List<GameObject>();
 
@@ -33,8 +35,10 @@ namespace Assets.Scripts.Framework.GameManagement.UI
             Assert.IsNotNull(CharacterMenu);
             Assert.IsNotNull(Inventory);
             Assert.IsNotNull(Options);
+            Assert.IsNotNull(Property);
+            Assert.IsNotNull(Logs);
 
-            menus.AddRange(new []{CharacterMenu, Inventory, Options});
+            menus.AddRange(new []{CharacterMenu, Inventory, Options, Property, Logs });
 
             foreach (GameObject m in menus)
             {
@@ -59,6 +63,10 @@ namespace Assets.Scripts.Framework.GameManagement.UI
                 HandleMenu(Inventory);
             if (Input.GetKeyDown(KeyCode.Escape))
                 HandleMenu(Options);
+            if (Input.GetKeyDown(KeyCode.P))
+                HandleMenu(Property);
+            if (Input.GetKeyDown(KeyCode.L))
+                HandleMenu(Logs);
         }
 
         public void HandleMenu(GameObject menu)
@@ -72,7 +80,7 @@ namespace Assets.Scripts.Framework.GameManagement.UI
                 foreach (GameObject m in menus.Where(m => m != menu))
                 {
                     GameMenu gm = m.GetComponent<GameMenu>();
-                    if (gm.visible == true)
+                    if (gm.visible)
                         gm.FadeOut(m);
                 }                
                 gameMenu.FadeIn(menu);
