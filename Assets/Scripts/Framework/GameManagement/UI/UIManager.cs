@@ -61,7 +61,7 @@ namespace Assets.Scripts.Framework.GameManagement.UI
                 HandleMenu(Options);
         }
 
-        private void HandleMenu(GameObject menu)
+        public void HandleMenu(GameObject menu)
         {
             GameMenu gameMenu = menu.GetComponent<GameMenu>();
 
