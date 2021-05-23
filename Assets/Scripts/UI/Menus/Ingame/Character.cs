@@ -55,14 +55,14 @@ namespace Assets.Scripts.UI.Menus.Ingame
         private void CreateSkillEntry(Tuple<string, int> skillPropertyInfo)
         {
             GameObject skillEntry = Instantiate(SkillEntryPrefab, SkillPanel.transform);
-            skillEntry.transform.localPosition = new Vector3(-90, lastSkillEntryPositionY, 0);
+            skillEntry.transform.localPosition = new Vector3(-80, lastSkillEntryPositionY, 0);
             skillEntry.GetComponent<Text>().text = skillPropertyInfo.Item1;
 
             GameObject skillValue = Instantiate(SkillEntryPrefab, SkillPanel.transform);
-            skillValue.transform.localPosition = new Vector3(90, lastSkillEntryPositionY, 0);
+            skillValue.transform.localPosition = new Vector3(80, lastSkillEntryPositionY, 0);
             skillValue.GetComponent<Text>().text = skillPropertyInfo.Item2.ToString();
 
-            lastSkillEntryPositionY -= 12;
+            lastSkillEntryPositionY -= 10;
         }
     }
 }
