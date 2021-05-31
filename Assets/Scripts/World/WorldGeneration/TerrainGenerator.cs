@@ -18,6 +18,7 @@ namespace Assets.Scripts.World.WorldGeneration
 
         public Material TerrainMaterial;
         public Material WaterMaterial;
+        public Material OutlineMaterial;
         public WorldShapeSettings ShapeSettings;
 
         [Range(1, 256)]
@@ -91,6 +92,7 @@ namespace Assets.Scripts.World.WorldGeneration
                             WaterLevel,
                             transform, 
                             TerrainMaterial,
+                            OutlineMaterial,
                             WaterMaterial));
                     }
                 }
