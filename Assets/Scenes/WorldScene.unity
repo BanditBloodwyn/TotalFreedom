@@ -1754,7 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 2100216296}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 2118610870}
 --- !u!114 &411606083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2712,7 +2712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 1356323989}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 2118610870}
 --- !u!114 &624410202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3317,7 +3317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 517897242}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 2118610870}
 --- !u!114 &684584074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5247,7 +5247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 1390124203}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 2118610870}
 --- !u!114 &1384941670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8357,7 +8357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 2136085080}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 2118610870}
 --- !u!114 &2096732008
 MonoBehaviour:
   m_ObjectHideFlags: 0
