@@ -7,10 +7,11 @@ namespace Assets.Scripts.Camera
     public class ClickToSetPlayerTarget : MonoBehaviour
     {
         public WalkToClickedPosition walkingScript;
+        public GameManager gameManager;
 
         private void Update()
         {
-            if(GameManager.instance.gameState == GameState.Playing)
+            if(gameManager.gameState == GameState.Playing)
             {
                 if (Input.GetMouseButtonDown(1))
                     SetWalkingTarget();

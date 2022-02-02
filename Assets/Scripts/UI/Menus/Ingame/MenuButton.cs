@@ -7,7 +7,8 @@ namespace Assets.Scripts.UI.Menus.Ingame
     public class MenuButton : MonoBehaviour
     {
         [SerializeField] private GameObject MenuToOpen;
-        
+        public UIManager uiManager;
+
         // Start is called before the first frame update
         private void Start()
         {
@@ -22,7 +23,7 @@ namespace Assets.Scripts.UI.Menus.Ingame
 
         public void OnButtonClicked()
         {
-            UIManager.instance.HandleMenu(MenuToOpen);
+            uiManager.HandleMenu(MenuToOpen);
         }
     }
 }

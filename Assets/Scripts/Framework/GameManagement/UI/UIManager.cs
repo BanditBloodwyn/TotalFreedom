@@ -8,8 +8,6 @@ namespace Assets.Scripts.Framework.GameManagement.UI
 {
     public class UIManager : MonoBehaviour
     {
-        public static UIManager instance;
-
         [SerializeField] private GameObject CharacterMenu;
         [SerializeField] private GameObject Inventory;
         [SerializeField] private GameObject Options;
@@ -25,13 +23,6 @@ namespace Assets.Scripts.Framework.GameManagement.UI
 
         private void Awake()
         {
-            if (instance == null)
-                instance = this;
-            else if (instance != this)
-                Destroy(gameObject);
-
-            DontDestroyOnLoad(gameObject);      // this object stays even if scenes are changing
-
             Assert.IsNotNull(CharacterMenu);
             Assert.IsNotNull(Inventory);
             Assert.IsNotNull(Options);
@@ -45,7 +36,6 @@ namespace Assets.Scripts.Framework.GameManagement.UI
                 m.SetActive(true);
                 m.GetComponent<GameMenu>().FadeOut(m);
             }
-
         }
 
         // Start is called before the first frame update

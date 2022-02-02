@@ -1754,6 +1754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 2100216296}
+  uiManager: {fileID: 0}
 --- !u!114 &411606083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1970,6 +1971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 183ffa1b7d42af24da7964806de38bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 439823676}
   WorldInstances:
   - {fileID: 1432948130}
   - {fileID: 497964784}
@@ -1977,7 +1979,6 @@ MonoBehaviour:
   ChunkSize: 200
   TerrainMaterial: {fileID: 2100000, guid: 8e861e53cac7a56489dade262bb1d4df, type: 2}
   WaterMaterial: {fileID: 2100000, guid: 8a3bb4302f506854da70d636fa5f3e93, type: 2}
-  OutlineMaterial: {fileID: 2100000, guid: e81deada622c9d3449f9792dbe048767, type: 2}
   ShapeSettings: {fileID: 11400000, guid: adcccb0cc7a74db44b887fecb01efbbb, type: 2}
   WaterLevel: 1
   shapeSettingsFoldout: 1
@@ -2274,12 +2275,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141441bacfe74cd4eb00fc780652dbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiManager: {fileID: 2118610870}
   MovingSpeed: 5
   ScrollSpeed: 1
   MinimumHeight: 10
   MaximumHeight: 100
   positionLerpTime: 1
   rotationLerpTime: 0.01
+  MaximumPitch: 90
+  PitchSensitivity: 2
 --- !u!81 &497964787
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2344,6 +2348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingScript: {fileID: 1432948132}
+  gameManager: {fileID: 439823676}
 --- !u!1 &517897242
 GameObject:
   m_ObjectHideFlags: 0
@@ -2707,6 +2712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 1356323989}
+  uiManager: {fileID: 0}
 --- !u!114 &624410202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3311,6 +3317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 517897242}
+  uiManager: {fileID: 0}
 --- !u!114 &684584074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5240,6 +5247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 1390124203}
+  uiManager: {fileID: 0}
 --- !u!114 &1384941670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5671,7 +5679,6 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e7af58f06733ada4481cef0ab10ddd34, type: 2}
-  - {fileID: 2100000, guid: f03ebcbc60447b849acc517158931008, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8350,6 +8357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MenuToOpen: {fileID: 2136085080}
+  uiManager: {fileID: 0}
 --- !u!114 &2096732008
 MonoBehaviour:
   m_ObjectHideFlags: 0

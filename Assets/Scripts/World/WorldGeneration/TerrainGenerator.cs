@@ -7,6 +7,8 @@ namespace Assets.Scripts.World.WorldGeneration
 {
     public class TerrainGenerator : MonoBehaviour
     {
+        public GameManager gameManager;
+
         [Tooltip("All objects which need an active terrain around them.")]
         public Transform[] WorldInstances;
 
@@ -18,7 +20,6 @@ namespace Assets.Scripts.World.WorldGeneration
 
         public Material TerrainMaterial;
         public Material WaterMaterial;
-        public Material OutlineMaterial;
         public WorldShapeSettings ShapeSettings;
 
         [Range(1, 256)]
@@ -65,8 +66,8 @@ namespace Assets.Scripts.World.WorldGeneration
                 UpdateChunksForInstance(worldInstancesChunkCoordinate);
             }
 
-            if(GameManager.instance.gameState == GameState.LoadingScreen)
-                GameManager.instance.GameStarted();
+            if(gameManager.gameState == GameState.LoadingScreen)
+                gameManager.GameStarted();
         }
 
         private void UpdateChunksForInstance(Vector2 worldInstancesChunkCoordinate)
@@ -92,7 +93,6 @@ namespace Assets.Scripts.World.WorldGeneration
                             WaterLevel,
                             transform, 
                             TerrainMaterial,
-                            OutlineMaterial,
                             WaterMaterial));
                     }
                 }

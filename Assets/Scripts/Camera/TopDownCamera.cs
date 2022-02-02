@@ -3,13 +3,17 @@ using UnityEngine;
 
 namespace Assets.Scripts.Camera
 {
-    public class Camera : MonoBehaviour
+    public class TopDownCamera : MonoBehaviour
     {
+        public UIManager uiManager;
+
         private readonly CameraState m_TargetCameraState = new CameraState();
         private readonly CameraState m_InterpolatingCameraState = new CameraState();
         private float currentHeight = 5;
         private float lastDetectedTerrainHeight;
-
+        
+        private Vector3 oldMousePos;
+        private Vector3 newMousePos;
 
         [Header("Movement Settings")]
 
@@ -30,10 +34,20 @@ namespace Assets.Scripts.Camera
        
         [Tooltip("Time it takes to interpolate camera rotation 99% of the way to the target."), Range(0.001f, 1f)]
         public float rotationLerpTime = 0.01f;
+        
+        [SerializeField, Range(0, 90)] private float MaximumPitch = 0f;
+        [SerializeField, Range(0, 5)] private float PitchSensitivity = 1f;
+
+        private void Start()
+        {
+            m_TargetCameraState.pitch = 60;
+        }
 
         // Update is called once per frame
         private void Update()
         {
+            oldMousePos = Input.mousePosition;
+
             // Translation
             Vector3 translation = GetInputTranslationDirection() * Time.deltaTime;
             
@@ -48,7 +62,8 @@ namespace Assets.Scripts.Camera
 
             m_TargetCameraState.Translate(translation);
             m_TargetCameraState.y = GetCameraHeight();
-            m_TargetCameraState.pitch = 60;
+            GetCameraPitch();
+            GetCameraYaw();
 
             // Framerate-independent interpolation
             // Calculate the lerp amount, such that we get 99% of the way to our target in the specified time
@@ -57,11 +72,31 @@ namespace Assets.Scripts.Camera
             m_InterpolatingCameraState.LerpTowards(m_TargetCameraState, positionLerpPct, rotationLerpPct);
             
             m_InterpolatingCameraState.UpdateTransform(transform);
+           
+            newMousePos = Input.mousePosition;
+        }
+
+        private void GetCameraYaw()
+        {
+            if (Input.GetMouseButton(2))
+            {
+                float deltaYaw = (oldMousePos.x - newMousePos.x) * -PitchSensitivity;
+                m_TargetCameraState.yaw -= deltaYaw * Time.deltaTime;
+            }
+        }
+
+        private void GetCameraPitch()
+        {
+            if (Input.GetMouseButton(2))
+            {
+                float deltaPitch = (oldMousePos.y - newMousePos.y) * PitchSensitivity;
+                m_TargetCameraState.pitch = Mathf.Clamp(m_TargetCameraState.pitch - deltaPitch * Time.deltaTime, 0, MaximumPitch);
+            }
         }
 
         private float GetCameraHeight()
         {
-            if (! UIManager.instance.IsMenuOpen)
+            if (!uiManager.IsMenuOpen)
             {
                 currentHeight -= Input.mouseScrollDelta.y * ScrollSpeed;
                 if (currentHeight < MinimumHeight)

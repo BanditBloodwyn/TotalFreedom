@@ -12,7 +12,6 @@ namespace Assets.Scripts.World.WorldGeneration
         private MeshFilter meshFilter;
         private GameObject terrainGameObject;
         private readonly Material terrainMaterial;
-        private readonly Material outlineMaterial;
         private readonly Material waterMaterial;
 
         private readonly Vector2 chunkPosition2D; // chunk coordinates, not worldspace coordinates
@@ -29,14 +28,12 @@ namespace Assets.Scripts.World.WorldGeneration
             float waterLevel,
             Transform parent, 
             Material terrainMaterial,
-            Material outlineMaterial, 
             Material waterMaterial)
         {
             this.shapeGenerator = shapeGenerator;
             this.size = size;
             this.waterLevel = waterLevel;
             this.terrainMaterial = terrainMaterial;
-            this.outlineMaterial = outlineMaterial;
             this.waterMaterial = waterMaterial;
 
             chunkPosition2D = coord * size;
@@ -64,7 +61,7 @@ namespace Assets.Scripts.World.WorldGeneration
             meshFilter = terrainGameObject.AddComponent<MeshFilter>();
             meshFilter.sharedMesh = new Mesh();
 
-            meshFilter.GetComponent<MeshRenderer>().materials = new[] { terrainMaterial , outlineMaterial};
+            meshFilter.GetComponent<MeshRenderer>().materials = new[] { terrainMaterial };
         }
 
         private void ConstructMesh()
